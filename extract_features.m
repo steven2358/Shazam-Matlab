@@ -31,7 +31,7 @@ num_s = length(songnames);
 for s_ind = 1:num_s,
 	% load song
 	filename = sprintf('%s%s',songdir,songnames{s_ind});
-	s = wavread(filename);
+	s = audioread(filename);
 	slen = length(s);
 	fprintf('Creating hash table for "%s"...\n',songnames{s_ind});
 
