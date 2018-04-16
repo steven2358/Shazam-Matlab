@@ -20,7 +20,7 @@ for w_ind = 1:num_win,
 	wstart = (w_ind-1)*(wlen-olen)+1;
 	wend = wstart + wlen - 1;
 	
-	win = s(wstart:wend).*hamming(wlen);
+	win = s(wstart:wend)'.*hamming(wlen);
 	fwin = abs(fft(win));
 	[maxpeak,maxind] = max(fwin);
 	specpeaks(w_ind) = maxind;
