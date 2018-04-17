@@ -3,6 +3,8 @@ function hashtable = get_fingerprints(s)
 %
 % Programmed by Steven Van Vaerenbergh (January 2005).
 
+s = s(:); % Force column format. Sound must be mono.
+
 slen = length(s);
 
 load program_constants
