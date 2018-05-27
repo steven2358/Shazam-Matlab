@@ -4,7 +4,13 @@ function score = trymatch(sample,hashtable,num_win)
 %
 % Programmed by Steven Van Vaerenbergh (January 2005).
 
-load program_constants
+% load configuration
+param = local_settings();
+olen = param.olen;
+wlen = param.wlen;
+t_mindelta = param.t_mindelta;
+t_maxdelta = param.t_maxdelta;
+t_freqdiff = param.t_freqdiff;
 
 samplen = length(sample);
 
@@ -39,7 +45,7 @@ for sw_ind = 1:snum_win,
 			freqdiff_ind = freqdiff + t_freqdiff + 1;
 			% times on which the found combination occurs
 			db_times = hashtable{thisfreq,freqdiff_ind,delta_ind};
-			for (db_ind = 1:length(db_times))
+			for db_ind = 1:length(db_times)
 				delta = db_times(db_ind) - sw_ind; 
 				if (delta>0)
 					histo(delta) = histo(delta)+1;

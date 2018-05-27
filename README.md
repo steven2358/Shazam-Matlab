@@ -10,12 +10,12 @@ Author: Steven Van Vaerenbergh.
 Preliminaries
 ---
 
-This package requires a directory containing music or audio fragments in `.wav` format,
+This package requires a directory containing music or audio fragments in `.wav` format.
 
 Part A: Feature extraction
 ---
 
-1. Open `local_settings_sample.m`, fill in the `songdir` and `hashdir` of your choice and save as `local_settings.m`. The `hashdir` can be any directory and must be created manually. The `songdir` must contain audio fragments in .wav format (default: 8kHz). For music recognition, each audio fragment is a complete song.
+1. Open `local_settings_sample.m`, fill in the `songdir` and `hashdir` of your choice and save as `local_settings.m`. The `hashdir` can be any directory and must be created manually. The `songdir` must contain audio fragments in .wav format, mono, and sampling frequency preferably 8kHz. For music recognition, each audio fragment is a complete song.
 2. Run `extract_features.m`. This creates a hashtable for each song, in a `.mat` file. For details, see the explanation by Dr. Wang.
 
 Part B: Music recognition

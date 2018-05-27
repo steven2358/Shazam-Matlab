@@ -32,13 +32,14 @@ t_mindelta = param.t_mindelta;
 t_maxdelta = param.t_maxdelta;
 t_freqdiff = param.t_freqdiff;
 
-num_s = 10;%length(songnames);
+num_s = length(songnames);
 samplen = sampsec*fs;
 
 % choose song
 good_songind = round(rand*num_s + 0.5);
 filename = fullfile(songdir,songnames{good_songind});
 s = audioread(filename);
+s = s(:);
 slen = length(s);
 num_win = floor((slen-olen)/(wlen-olen));
 
